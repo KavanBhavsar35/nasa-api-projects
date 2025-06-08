@@ -1,53 +1,54 @@
-# Next.js & HeroUI Template
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+# 🚀 NASA Explorer
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+A sleek, modern web interface to explore NASA's public APIs – including the Astronomy Picture of the Day (APOD), Mars Rover Photos, and more. Built with **Next.js**, **ShadCN UI**, **HeroUI**, and **Framer Motion**.
 
-## Technologies Used
+## ✨ Features
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+- 🌌 Hero section with animated headline and background
+- 🛰️ APOD Viewer with high-res media and metadata
+- 🪐 Modular project previews powered by NASA APIs
+- 📱 Responsive layout with motion-based animations
+- 🌗 Dark mode support
+- 💨 Framer Motion-based micro-animations and section transitions
 
-## How to Use
+## 🔧 Tech Stack
 
-### Use the template with create-next-app
+- **Next.js (App Router)**
+- **TypeScript**
+- **TailwindCSS + ShadCN UI + HeroUI**
+- **Framer Motion**
+- **NASA Open APIs**
 
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
-
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+## 📦 Getting Started
 
 ```bash
+# Clone the repo
+git clone https://github.com/your-username/nasa-explorer.git
+cd nasa-explorer
+
+# Install dependencies
 npm install
-```
 
-### Run the development server
-
-```bash
+# Run dev server
 npm run dev
+````
+
+## 🌐 Environment Variables
+
+You can use NASA's demo key or add your own:
+
+```env
+NASA_API_KEY=DEMO_KEY
 ```
 
-### Setup pnpm (optional)
+## 🚀 Deployment
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+Deploy easily on platforms like [Vercel](https://vercel.com/) or Netlify.
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+## 📄 License
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+This project is licensed under the [MIT License](./LICENSE).
 
-## License
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+> Built with 💙 and curiosity by [Your Name](https://kavan-bhavsar.vercel.app).
