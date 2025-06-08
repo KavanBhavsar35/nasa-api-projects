@@ -3,18 +3,11 @@ import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 import { Link } from "@heroui/link";
-import {
-  FolderOpen,
-  ExternalLink,
-  Code,
-  Camera,
-  Globe,
-  Satellite,
-  Stars,
-} from "lucide-react";
+import { FolderOpen, ExternalLink, Code } from "lucide-react";
 
 import ProjectCard from "@/components/features/ProjectCard";
 import StaggeredFadeInList from "@/components/StaggeredFadeInList";
+import { data } from "@/config/site";
 
 export const metadata = {
   title: "Projects",
@@ -25,49 +18,10 @@ export const metadata = {
 };
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: "apod",
-      title: "Astronomy Picture of the Day",
-      description:
-        "Discover the cosmos with daily astronomical images and detailed explanations.",
-      status: "live" as const,
-      icon: <Camera className="w-5 h-5" />,
-      color: "bg-blue-500",
-      href: "/apod",
-    },
-    {
-      id: "mars-photos",
-      title: "Mars Rover Photos",
-      description: "Browse stunning images captured by NASA's Mars rovers.",
-      status: "coming-soon" as const,
-      icon: <Globe className="w-5 h-5" />,
-      color: "bg-red-500",
-      href: "/mars-photos",
-    },
-    {
-      id: "earth-imagery",
-      title: "Earth Imagery",
-      description:
-        "View satellite images of Earth from space with date search.",
-      status: "coming-soon" as const,
-      icon: <Satellite className="w-5 h-5" />,
-      color: "bg-green-500",
-      href: "/earth",
-    },
-    {
-      id: "asteroids",
-      title: "Near Earth Objects",
-      description: "Track asteroids and comets approaching Earth.",
-      status: "coming-soon" as const,
-      icon: <Stars className="w-5 h-5" />,
-      color: "bg-purple-500",
-      href: "/asteroids",
-    },
-  ];
-
-  const liveProjects = projects.filter((p) => p.status === "live");
-  const upcomingProjects = projects.filter((p) => p.status === "coming-soon");
+  const liveProjects = data.projects.filter((p) => p.status === "live");
+  const upcomingProjects = data.projects.filter(
+    (p) => p.status === "coming-soon",
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-blue-950">
@@ -168,11 +122,7 @@ export default function ProjectsPage() {
 
             <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
               <StaggeredFadeInList>
-                {[
-                  { value: "50+", label: "Available APIs" },
-                  { value: "Free", label: "No Cost Access" },
-                  { value: "1000+", label: "Daily Requests" },
-                ].map((stat, index) => (
+                {data.apiFeatures.map((stat, index) => (
                   <div
                     key={index}
                     className="p-4 text-center rounded-lg bg-blue-50 dark:bg-blue-900/20"

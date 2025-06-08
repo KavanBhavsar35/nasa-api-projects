@@ -1,15 +1,8 @@
-import {
-  Calendar,
-  Image as ImageIcon,
-  Info,
-  Lightbulb,
-  RefreshCw,
-  Maximize2,
-  Archive,
-  FileText,
-} from "lucide-react";
+import { Info, Lightbulb } from "lucide-react";
 
 import StaggeredFadeInList from "../StaggeredFadeInList";
+
+import { data } from "@/config/site";
 
 export function InfoSection() {
   return (
@@ -25,31 +18,7 @@ export function InfoSection() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <StaggeredFadeInList>
-            {[
-              {
-                icon: <Calendar className="w-4 h-4 text-blue-500" />,
-                title: "Daily Updates",
-                description:
-                  "New images published every day since June 16, 1995",
-              },
-              {
-                icon: <ImageIcon className="w-4 h-4 text-blue-500" />,
-                title: "High Quality",
-                description: "HD versions available for most images",
-              },
-              {
-                icon: <FileText className="w-4 h-4 text-blue-500" />,
-                title: "Expert Explanations",
-                description:
-                  "Detailed descriptions by professional astronomers",
-              },
-              {
-                icon: <Archive className="w-4 h-4 text-blue-500" />,
-                title: "Historical Archive",
-                description:
-                  "Access nearly three decades of astronomical images",
-              },
-            ].map((item, index) => (
+            {data.apodAbout.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 {item.icon}
                 <div>
@@ -75,24 +44,7 @@ export function InfoSection() {
 
         <div className="space-y-4">
           <StaggeredFadeInList>
-            {[
-              {
-                icon: <Calendar className="w-4 h-4 text-blue-500" />,
-                title: "Date Selection",
-                description: "Explore images from any day since June 16, 1995",
-              },
-              {
-                icon: <RefreshCw className="w-4 h-4 text-blue-500" />,
-                title: "Random Discovery",
-                description: "See randomly selected images from NASA's archive",
-              },
-              {
-                icon: <Maximize2 className="w-4 h-4 text-blue-500" />,
-                title: "High Definition",
-                description:
-                  "View images in full resolution for detailed examination",
-              },
-            ].map((tip, index) => (
+            {data.apodTips.map((tip, index) => (
               <div key={index} className="flex items-start gap-3">
                 {tip.icon}
                 <div>

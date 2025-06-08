@@ -3,12 +3,14 @@ import { Link } from "@heroui/link";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
-import { Rocket, Camera, Globe, Stars, ArrowRight } from "lucide-react";
+import { Rocket, Camera, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import ProjectCard from "@/components/features/ProjectCard";
 import FadeInSection from "@/components/FadeInSection";
 import StaggeredFadeInList from "@/components/StaggeredFadeInList";
+import { data } from "@/config/site";
+import Aurora from "@/components/Aurora/Aurora";
 
 export default function Home() {
   return (
@@ -17,7 +19,14 @@ export default function Home() {
 
       <FadeInSection>
         <section className="relative overflow-hidden rounded-b-3xl">
-          <div className="absolute inset-0 bg-[url('/images/stars.jpeg')] opacity-90 dark:opacity-10" />
+          <div className="absolute inset-0">
+            <Aurora
+              amplitude={1.0}
+              blend={0.5}
+              // colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+              speed={0.5}
+            />
+          </div>
           <div className="container relative z-10 px-6 py-24 mx-auto lg:py-32">
             <div className="max-w-4xl mx-auto text-center text-white">
               <Chip
@@ -35,7 +44,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <h1 className="mb-6 text-5xl font-bold text-transparent lg:text-7xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+                <h1 className="mb-6 text-3xl font-bold text-transparent lg:text-7xl bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text from-indigo-700 to-violet-950">
                   A Universe of NASA Projects
                 </h1>
               </motion.div>
@@ -46,7 +55,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <p className="max-w-2xl mx-auto mb-8 text-xl text-slate-300 lg:text-2xl">
+                <p className="max-w-2xl mx-auto mb-8 text-xl dark:text-slate-300 lg:text-2xl text-slate-800">
                   Discover a curated set of web experiments built using NASA’s
                   public APIs. Each project dives into a unique corner of our
                   cosmos.
@@ -67,7 +76,7 @@ export default function Home() {
 
                 <Button
                   as={Link}
-                  className="bg-white font-mediumtext-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:bg-slate-800 dark:hover:bg-slate-700"
+                  className="border bg-slate-200 border-slate-300 font-mediumtext-blue-600 hover:bg-slate-100 dark:text-blue-400 dark:bg-slate-800 dark:hover:bg-slate-700"
                   endContent={<ArrowRight className="w-4 h-4" />}
                   href="/projects"
                   size="lg"
@@ -97,26 +106,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <StaggeredFadeInList>
-                {[
-                  {
-                    icon: <Camera className="w-6 h-6 text-blue-600" />,
-                    title: "Daily Discoveries",
-                    description:
-                      "New astronomical images and explanations updated daily from NASA's APOD service.",
-                  },
-                  {
-                    icon: <Globe className="w-6 h-6 text-green-600" />,
-                    title: "Real-time Data",
-                    description:
-                      "Access live data from Mars rovers, Earth satellites, and space telescopes.",
-                  },
-                  {
-                    icon: <Stars className="w-6 h-6 text-purple-600" />,
-                    title: "Interactive Experience",
-                    description:
-                      "Explore space through intuitive interfaces designed for discovery.",
-                  },
-                ].map((feature, index) => (
+                {data.features.map((feature, index) => (
                   <Card
                     key={index}
                     className="h-full transition-all hover:shadow-lg"
@@ -153,26 +143,7 @@ export default function Home() {
 
             <div className="grid max-w-4xl grid-cols-1 gap-8 mx-auto md:grid-cols-2">
               <StaggeredFadeInList>
-                {[
-                  {
-                    title: "Astronomy Picture of the Day",
-                    description:
-                      "Discover daily astronomical images with detailed explanations.",
-                    icon: <Camera className="w-5 h-5" />,
-                    color: "bg-blue-500",
-                    href: "/apod",
-                    status: "live" as const,
-                  },
-                  {
-                    title: "Mars Rover Photos",
-                    description:
-                      "Browse stunning images captured by NASA's Mars rovers.",
-                    icon: <Globe className="w-5 h-5" />,
-                    color: "bg-red-500",
-                    href: "/mars-photos",
-                    status: "coming-soon" as const,
-                  },
-                ].map((project, index) => (
+                {data.featuredProjects.map((project, index) => (
                   <ProjectCard
                     key={index}
                     project={{ id: index.toString(), ...project }}
@@ -199,26 +170,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <StaggeredFadeInList>
-                {[
-                  {
-                    icon: <Stars className="w-6 h-6 text-yellow-500" />,
-                    title: "Publicly Accessible",
-                    description:
-                      "No cost, no authentication hurdles — just plug and play with open data.",
-                  },
-                  {
-                    icon: <Rocket className="w-6 h-6 text-rose-500" />,
-                    title: "Reliable Sources",
-                    description:
-                      "Backed by NASA’s official infrastructure and curated datasets.",
-                  },
-                  {
-                    icon: <Camera className="w-6 h-6 text-indigo-500" />,
-                    title: "Visual Richness",
-                    description:
-                      "Stunning imagery from telescopes, satellites, and missions in space.",
-                  },
-                ].map((item, i) => (
+                {data.reasons.map((item, i) => (
                   <div
                     key={i}
                     className="p-6 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
