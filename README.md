@@ -24,7 +24,7 @@ A sleek, modern web interface to explore NASA's public APIs – including the As
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/nasa-explorer.git
+git clone https://github.com/KavanBhavsar35/nasa-api-projects.git
 cd nasa-explorer
 
 # Install dependencies
