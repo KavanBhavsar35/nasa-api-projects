@@ -14,7 +14,7 @@ import Aurora from "@/components/Aurora/Aurora";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-blue-950">
+    <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-blue-950">
       {/* Hero Section */}
 
       <FadeInSection>
@@ -44,7 +44,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <h1 className="mb-6 text-3xl font-bold text-transparent lg:text-7xl bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text from-indigo-700 to-violet-950">
+                <h1 className="mb-4 text-4xl font-bold text-transparent sm:text-5xl lg:text-7xl bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 bg-clip-text from-indigo-700 to-violet-950">
                   A Universe of NASA Projects
                 </h1>
               </motion.div>
@@ -62,7 +62,7 @@ export default function Home() {
                 </p>
               </motion.div>
 
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button
                   as={Link}
                   className="font-medium"
@@ -93,7 +93,7 @@ export default function Home() {
       {/* Features Section */}
       <FadeInSection>
         <section className="py-16">
-          <div className="container px-6 mx-auto">
+          <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
                 NASA Data at Your Fingertips
@@ -131,7 +131,7 @@ export default function Home() {
       {/* Projects Preview */}
       <FadeInSection>
         <section className="py-16">
-          <div className="container px-6 mx-auto">
+          <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
                 Featured Projects
@@ -158,7 +158,7 @@ export default function Home() {
       {/* Why nasa apis */}
       <FadeInSection>
         <section className="py-16 bg-white dark:bg-slate-900">
-          <div className="container px-6 mx-auto">
+          <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
                 Why Choose NASA APIs?
@@ -191,7 +191,7 @@ export default function Home() {
       {/* Tech Stack */}
       <FadeInSection>
         <section className="py-16 bg-slate-100 dark:bg-slate-900">
-          <div className="container px-6 mx-auto text-center">
+          <div className="w-full max-w-screen-xl px-4 mx-auto text-center sm:px-6 lg:px-8">
             <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
               Built With Modern Tools
             </h2>
